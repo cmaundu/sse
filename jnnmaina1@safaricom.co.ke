@@ -1,3 +1,4 @@
+Introduction
 Sart, is a hospital system designed in java utilizing Spring JPA and hibernate. The system has been implemented using various design patterns, majorly Model View Controller, repositories and services, Code Dependency injection. The system is supposed to use a mysql database as Information Server.
 This system is a custom application build by self and extended for the purposes of this technical assessment test.
 
@@ -13,3 +14,4 @@ The following design considerations have been implemented.
 - The application is both accessible via web exposed through html pages or via Rest calls. A demonstration for the rest call http://localhost:8080/safari/report/list has been implemented in co.ke.sart.site.controller.ReportRestController which returns a JSON Map object with all the details of a report.
 - On the frontend, the application employes use of spring forms for data capture, CSS3 and Java Script for additional user displays. Some of the CSS were borrowed from https://adminlte.io/themes/AdminLTE/index2.html - my favorite UI designs. 
 - The system also employes Internationlization using Resource Message Bundles located in web/WEB-INF/i18n.
+- co.ke.sart.site.controller.LocationRestService has been created to demonstrate consumption of public API (Location - https://www.aftership.com/docs/api/4/overview).
