@@ -10,3 +10,5 @@ The following design considerations have been implemented.
 - A Unit test demonstration has been implemented in Test Packages sart.test.UserServiceTest which among other tests, has implemented validation that a user cannot be persisted in the database without a username.
 - The system has implemented EhCache, an open source optimesed cache for Java, this has been demonstrated in co.ke.sart.Service.CacheService invoked by co.ke.sart.Controller.RequestController.viewRequest. 
 - The application is both accessible via web exposed through html pages or via Rest calls. A demonstration for the rest call http://localhost:8080/safari/report/list has been implemented in co.ke.sart.site.controller.ReportRestController which returns a JSON Map object with all the details of a report.
+- On the frontend, the application employes use of spring forms for data capture, CSS3 and Java Script for additional user displays. Some of the CSS were borrowed from https://adminlte.io/themes/AdminLTE/index2.html - my favorite UI designs. 
+- The system also employes Internationlization using Resource Message Bundles located in web/WEB-INF/i18n.
