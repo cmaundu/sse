@@ -14,4 +14,8 @@ The following design considerations have been implemented.
 - The application is both accessible via web exposed through html pages or via Rest calls. A demonstration for the rest call http://localhost:8080/safari/report/list has been implemented in co.ke.sart.site.controller.ReportRestController which returns a JSON Map object with all the details of a report.
 - On the frontend, the application employes use of spring forms for data capture, CSS3 and Java Script for additional user displays. Some of the CSS were borrowed from https://adminlte.io/themes/AdminLTE/index2.html - my favorite UI designs. 
 - The system also employes Internationlization using Resource Message Bundles located in web/WEB-INF/i18n.
-- co.ke.sart.site.controller.LocationRestService has been created to demonstrate consumption of public API (Location - https://www.aftership.com/docs/api/4/overview).
+- Implemented Transportation public API (Transportation - https://api.aftership.com/, v4). 
+---co.ke.sart.site.model.Courier.java is the model class with fields, 
+---co.ke.sart.site.Service.CourierService is the service class consuming Courier model and implemeting connection and Rest API calls, then
+---co.ke.sart.site.Controller implenting Controller (in model view Controller) which listens to ../courier/list and lists all courier services.
+---jsp/couriers/list is a jsp listing all couriers in a web page.
