@@ -1,0 +1,92 @@
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+.sidebar {
+    padding-bottom: 10px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar-menu li.header {
+    padding: 10px 25px 10px 15px;
+    font-size: 12px;
+}
+
+.sidebar-menu, .main-sidebar .user-panel, .sidebar-menu>li.header {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-menu, .main-sidebar .user-panel, .sidebar-menu>li.header {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+.sidebar-form, .sidebar-menu>li.header {
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.sidebar-menu>li.header {
+    color: #848484;
+    background: #f9fafc;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.sidebar-menu>li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sidebar-menu>li.active {
+    border-left-color: #00a65a;
+}
+
+.sidebar-menu>li>a {
+    border-left: 3px solid transparent;
+    font-weight: 600;
+}
+
+.skin-green-light .sidebar a {
+    color: #444;
+}
+
+.sidebar-menu>li:hover>a, .skin-green-light .sidebar-menu>li.active>a {
+    color: #000;
+    background: #f4f4f5;
+}
+
+.sidebar-menu>li.active>a {
+    font-weight: 600;
+}
+
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.sidebar-menu>li.active>a {
+    font-weight: 600;
+}
+
+.sidebar-menu li>a>.pull-right-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -7px;
+}
