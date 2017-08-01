@@ -1,4 +1,4 @@
-Sart, is a hospital system designed in java utilizing Spring JPA and hibernate. The system has been implemented using various design patterns, majorly Model View Controller, repositories and services, Code Dependency injection. The system is supposed to use a mysql database as Information Server.
+Sart, is a hospital system designed in java EE utilizing Spring JPA and hibernate. The system has been implemented using various design patterns, majorly Model View Controller, repositories and services, Code Dependency injection. The system is supposed to use a mysql database as Information Server.
 This system is a custom application build by self and extended for the purposes of this technical assessment test.
 
 The following design considerations have been implemented.
