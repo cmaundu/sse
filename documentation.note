@@ -1,0 +1,11 @@
+Safari, is a hospital system designed in java utilizing Spring JPA and hibernate. The system has been implemented using various design patterns, majorly Model View Controller, repositories and services, Code Dependency injection. The system is supposed to use a mysql database as Information Server.
+This system is a custom application build by self and extended for the purposes of this technical assessment test.
+
+The following design considerations have been implemented.
+-	Bootstrap classes (singleton) have been utilized to ensure consistent and single load of configuration classes required by the Java EE to execute code using web containers.
+-	Security has been provided using Spring Framework Security classes but extended to consume database authentication and different role configurations. Much emphasize is single user role implementation attached to various permissions.
+-	Data access has been implemented using Spring JPA 2.1 to remove boilerplate duplication of code. Additional code has been implemented using Simple JDBC templates, which are lightweight especially while accessing Stored Procedures.
+-	The code design adheres to greater extend in the use SOLID design patterns especially single use and extensibility. This is demonstrated by the simplified Controllers only used to provide web control, entities – used as Data Transfer Objects to database, repositories – responsible for database manipulation.
+-	This system is designed to run on a tomcat JEE server(s), with a load balance http server which is supposed to utilize sticky sessions (JSessionID) to provide High Availability and Disaster Recovery of the system.
+-	A Unit test demonstration has been implemented in Test Packages sart.test.UserServiceTest which among other tests, has implemented validation that a user cannot be persisted in the database without a username.
+- The system has implemented EhCache, an open source optimesed cache for Java, this has been demonstrated in co.ke.sart.Service.CacheService invoked by co.ke.sart.Controller.RequestController.viewRequest. 
