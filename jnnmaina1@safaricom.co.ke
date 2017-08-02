@@ -22,6 +22,8 @@ The following design considerations have been implemented.
 ---co.ke.sart.site.controller.CourierRestController provides a rest entpoint for retrieving data.
 ---jsp/couriers/list is a jsp listing all couriers in a web page.
 ---jsp/couriers/search a jsp page for searching courier service providers.
+---https://<server>:<port>/safari/api/courier/list - is an API end point listing all couriers
+---https://<server>:<port>/safari/api/courier/search/<search string> - is an API end point to search courier where name, other name, slug contains the specified <search string>
 Additional Architectural 
 1.	Distributed application in several nodes. The design of this application allows use of sticky sessions, which allows for load balancing using any http or other load balancers to allow persisting of user requests on specific nodes.
 2.	Services have been designed to be more course grained avoiding dependencies and many calls which attempts to fulfil request with minimum interactions
