@@ -17,8 +17,9 @@ The following design considerations have been implemented.
 - The system also employes Internationlization using Resource Message Bundles located in web/WEB-INF/i18n.
 - Implemented Transportation public API (Transportation - https://api.aftership.com/, v4). 
 ---co.ke.sart.site.model.Courier.java is the model class with fields, 
----co.ke.sart.site.Service.CourierService is the service class consuming Courier model and implemeting connection and Rest API calls, then
----co.ke.sart.site.Controller implenting Controller (in model view Controller) which listens to ../courier/list and lists all courier services.
+---co.ke.sart.site.Service.CourierService is the service class consuming Courier model and implemeting connection and Rest API calls. Since there may be latencies in obtaining data from internet, retrieved information has been cached using EHCache. then
+---co.ke.sart.site.controller.CourierController implenting Controller (in model view Controller) which listens to ../courier/list and lists all courier services.
+---co.ke.sart.site.controller.CourierRestController provides a rest entpoint for retrieving data.
 ---jsp/couriers/list is a jsp listing all couriers in a web page.
 ---jsp/couriers/search a jsp page for searching courier service providers.
 Additional Architectural 
