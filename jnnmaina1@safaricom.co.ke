@@ -11,7 +11,7 @@ The following design considerations have been implemented.
 - This system is designed to run on a tomcat JEE server(s), with a load balance http server which is supposed to utilize sticky sessions (JSessionID) to provide High Availability and Disaster Recovery of the system.
 - A Unit test demonstration has been implemented in Test Packages sart.test.UserServiceTest which among other tests, has implemented validation that a user cannot be persisted in the database without a username.
 - The system has implemented EhCache, an open source optimized cache for Java EE, since diagnosis information does not have frequent updates, the cache has been implemented for this entity in co.ke.sart.site.entity.ICD - using attribute @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
---- Entity querying is using Spring inbuilt cache to retrieve values incase of slow database speeds.
+--- Entity Cacheing querying is using Spring inbuilt cache to retrieve values incase of slow database speeds.
 - The application is both accessible via web exposed through html pages or via Rest calls. A demonstration for the rest call http://localhost:8080/safari/report/list has been implemented in co.ke.sart.site.controller.ReportRestController which returns a JSON Map object with all the details of a report.
 - On the frontend, the application employes use of spring forms for data capture, CSS3 and Java Script for additional user displays. Some of the CSS were borrowed from https://adminlte.io/themes/AdminLTE/index2.html - my favorite UI designs. 
 - The system also employes Internationlization using Resource Message Bundles located in web/WEB-INF/i18n.
@@ -21,3 +21,10 @@ The following design considerations have been implemented.
 ---co.ke.sart.site.Controller implenting Controller (in model view Controller) which listens to ../courier/list and lists all courier services.
 ---jsp/couriers/list is a jsp listing all couriers in a web page.
 ---jsp/couriers/search a jsp page for searching courier service providers.
+Additional Architectural 
+1.	Distributed application in several nodes. The design of this application allows use of sticky sessions, which allows for load balancing using any http or other load balancers to allow persisting of user requests on specific nodes.
+2.	Services have been designed to be more course grained avoiding dependencies and many calls which attempts to fulfil request with minimum interactions
+3.	Logging is configured to use asynchronous calls, which eliminates log latency times included in the service calls.
+4.	The system employs use of shared database connection resources; this eliminates overheads incurred in establishing such connections. In addition, data retrieval during manipulation and display is done per table with maximum on one join to reduce overheads associated with many joins.
+5.	Parallel processing using Java lambda expressions have been implemented. This ensures through lambda, only the required set is processed, and such processing happens in parallel.
+6.	Re-use of queried data via Spring Cache framework reduces round trips to the database by reusing retrieved data. This will reduce number of database reads.
